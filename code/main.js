@@ -6,6 +6,7 @@ function textWipe() {
     document.getElementById("text").innerHTML = " "
 };
 
+//runs all functions that are needed on the first button press
 function FirstCallSet() {
     namePrompt();
     removeStartButton();
@@ -32,12 +33,14 @@ function ErrorMsg() {
     document.getElementById("error").innerHTML = "It seems you have pressed the cancel button on the prompt, this makes me sad :"
 }; 
 
+//deletes the start button for a nice a clean screen
 function removeStartButton() {
     var StartButton = document.getElementById("startButton");
     StartButton.parentNode.removeChild(StartButton);
     return false;
 };
 
+//creates a try again button so the code can be used multible times without reloading the page
 function createTryAgainButton() {
     var tryAgainButton = document.createElement("input");
     tryAgainButton.setAttribute("type", "button");
@@ -47,8 +50,8 @@ function createTryAgainButton() {
     
 };
 
+//runs all functions that are needed on every other run exampting the first
 function repeatingCallSet() {
     textWipe();
     namePrompt();
-    
 };
